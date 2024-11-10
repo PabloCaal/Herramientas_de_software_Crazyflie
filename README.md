@@ -15,10 +15,7 @@ Este proyecto implementa un conjunto de herramientas de software para controlar 
 - [Estructura del proyecto](#estructura-del-repositorio)
 - [Requisitos previos](#requisitos-previos)
 - [Instalación](#instalación)
-- [Uso](#uso)
-  - [Ejemplo de ejecución en Python](#ejemplo-de-ejecución-en-python)
-  - [Ejemplo de ejecución en Matlab](#ejemplo-de-ejecución-en-matlab)
-- [Ejemplos](#ejemplos)
+- [Uso y ejemplos](#uso-y-ejemplos)
 - [Documentación](#documentación)
 - [Licencia](#referencias)
 - [Referencias](#agradecimientos)
@@ -62,7 +59,20 @@ Este comando instalará las dependencias necesarias para el funcionamiento del d
 Esto permitirá que Matlab utilice la instalación de Python correcta y acceda a las librerías de Crazyflie.
    
 ## Uso y ejemplos
+Las funciones de control desarrolladas para el dron Crazyflie 2.1 permiten ejecutar tareas de conexión, despegue, aterrizaje, y seguimiento de trayectorias. Estas funciones también habilitan la fusión de datos de sensores del dron y el sistema de captura de movimiento Robotat, proporcionando un control seguro y preciso en diversos experimentos y escenarios de vuelo.
 
+En la carpeta `experimentos` encontrarás ejemplos detallados de uso. Cada archivo en esta carpeta explica el propósito del experimento y contiene instrucciones para ejecutar cada paso. Asegúrate de tener instaladas todas las dependencias de software mencionadas en el manual de usuario incluido en la documentación del proyecto. Esta carpeta contiene todos los experimentos realizados para validar el uso del dron Crazyflie con la placa Flow Deck utilizando las funciones de control desarrolladas. 
+
+**Experimentos:**
+- `experimento1.m`: Prueba de conexión y desconexión.
+- `experimento2.m`: Prueba de despegue y aterrizaje.
+- `experimento3.m`: Prueba de vuelo a través de una trayectoria lineal simple.
+- `experimento4.m`: Prueba de vuelo a través de una trayectoria circular.
+- `experimento5.m`: Prueba de vuelo a través de una trayectoria lineal con fusión de sensores (Flow Deck + Robotat).
+- `experimento6.m`: Prueba de vuelo a través de una trayectoria circular con fusión de sensores (Flow Deck + Robotat).
+- `experimento7.m`: Prueba de despegue con modificación en el controlador PID.
+
+Para llevar a cabo estos experimentos dentro del ecosistema Robotat, es necesario asegurar un entorno adecuado que garantice el funcionamiento correcto de la placa de expansión Flow Deck. Como se menciona en el manual de usuario, se recomienda utilizar superficies con patrones reconocibles y diferenciables, disponibles en la carpeta `multimedia/misceláneos` del repositorio. También es fundamental que la iluminación sea adecuada, manteniendo únicamente encendidas las luces periféricas del laboratorio para optimizar las lecturas del sensor de flujo óptico.
 
 ## Documentación
 
