@@ -75,6 +75,15 @@ En la carpeta `experimentos` encontrarás ejemplos detallados de uso. Cada archi
 Para llevar a cabo estos experimentos dentro del ecosistema Robotat, es necesario asegurar un entorno adecuado que garantice el funcionamiento correcto de la placa de expansión Flow Deck. Como se menciona en el manual de usuario, se recomienda utilizar superficies con patrones reconocibles y diferenciables, disponibles en la carpeta `multimedia/misceláneos` del repositorio. También es fundamental que la iluminación sea adecuada, manteniendo únicamente encendidas las luces periféricas del laboratorio para optimizar las lecturas del sensor de flujo óptico.
 
 ## Documentación
+La documentación de este proyecto incluye todo lo necesario para configurar, operar y ejecutar experimentos con el dron Crazyflie 2.1 utilizando la placa de expansión Flow Deck y el sistema Robotat. A continuación, se detalla el contenido de la documentación proporcionada:
+
+1. **Manual de usuario**: Describe la configuración inicial del dron y sus componentes, incluyendo la instalación de la placa Flow Deck, calibración de sensores, y verificación de conexión con el dispositivo Crazyradio. Además, detalla los requisitos del entorno de vuelo y recomendaciones para optimizar el rendimiento de la placa de posicionamiento Flow Deck. Incluye instrucciones para instalar Python, Matlab, y las bibliotecas necesarias para interactuar con el dron Crazyflie (cflib) y el sistema Robotat. Este apartado proporciona detalles sobre compatibilidad entre versiones y configuración de entornos para ejecutar funciones de control.
+
+2. **Actualización de firmware de Crazyflie**: Describe el procedimiento para realizar la actualización de firmware del dron Crazyflie 2.1 para garantizar el funcionamiento eficiente de sus componentes de hardware y asegurar el funcionamiento óptimo de la placa de expansión Flow Deck.
+
+3. **Guías de laboratorio**: Incluye las guías de laboratorios elaboradas.
+   - **Laboratorio 1**: Control de altura del dron utilizando el controlador PID. Esta guía incluye instrucciones para modificar las constantes PID en Matlab y observar la respuesta del dron.
+   - **Laboratorio 2**: Seguimiento de trayectorias utilizando el sistema de captura de movimiento Robotat. Los estudiantes aprenderán a generar y ajustar trayectorias en Matlab con fusión de sensores.
 
 ## Referencias
 - Bitcraze, documentación de Crazyflie y sus módulos.
