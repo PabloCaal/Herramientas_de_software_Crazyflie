@@ -8,7 +8,7 @@ _Este repositorio contiene el desarrollo de herramientas de software y documenta
 </p>
 
 ## Descripción
-
+Este proyecto implementa un conjunto de herramientas de software para controlar el dron Crazyflie 2.1 de forma individual, utilizando la placa de expansión Flow Deck para mejorar su precisión de posicionamiento. A lo largo del desarrollo, se probaron y validaron varios algoritmos de control básico en Python, compatibles con Matlab, para permitir la integración entre ambos entornos. Además, se llevaron a cabo experimentos en el ecosistema de investigación Robotat, adaptando el dron a las condiciones y requisitos específicos de las prácticas de laboratorio y de investigación en la Universidad del Valle de Guatemala​.
 
 ## Índice
 - [Descripción](#descripción)
@@ -22,7 +22,6 @@ _Este repositorio contiene el desarrollo de herramientas de software y documenta
 - [Documentación](#documentación)
 - [Licencia](#referencias)
 - [Referencias](#agradecimientos)
-
 
 ## Estructura del repositorio
 - **experimentos**: Conjunto de scripts en Matlab de los experimentos realizados para validar a las herramientas de software desarrolladas .
@@ -43,15 +42,33 @@ Para este proyecto, se utilizaron Python y Matlab como herramientas principales 
 - **Matlab '24.1.0.2603908 (R2024a) Update 3'**: Usado como centro de control para ejecutar experimentos más complejos con el dron Crazyflie. Matlab permite invocar funciones de Python mediante comandos específicos, proporcionando una integración eficaz entre ambos lenguajes. Esta versión de Matlab es compatible con Python 3.11.0, según la matriz de compatibilidad oficial de Matlab, asegurando una comunicación fluida y estable entre Matlab y Python.
 
 ## Instalación
+1. **Instalar Python**: Asegúrate de tener Python 3.11.0 instalado. Puedes verificar tu versión de Python con el siguiente comando:
+   ```bash
+   python --version
+Asegúrate de agregar Python al PATH durante la instalación. 
 
-## Uso
+2. **Instalar cflib**: Esta librería es fundamental para la comunicación con el dron Crazyflie. Para instalarla, ejecuta el siguiente comando:
+   ```bash
+   pip install cflib
+Este comando instalará las dependencias necesarias para el funcionamiento del dron, como pyusb, libusb-package, scipy, numpy, entre otras.
 
-## Ejemplos
+3. **Configurar Python en Matlab**: Si deseas ejecutar funciones de Python desde Matlab, asegúrate de que Matlab reconozca la versión correcta de Python. Para comprobar esto, abre Matlab y ejecuta:
+   ```bash
+   pyenv
+   
+4. Si la versión de Python no es la correcta, cambia la configuración ejecutando el siguiente comando, reemplazando 'ruta/a/python' con la ruta a tu instalación de Python:
+   ```bash
+   pyenv('Version', 'ruta/a/python')
+Esto permitirá que Matlab utilice la instalación de Python correcta y acceda a las librerías de Crazyflie.
+   
+## Uso y ejemplos
+
 
 ## Documentación
 
 ## Referencias
-
+- Bitcraze, documentación de Crazyflie y sus módulos.
+- Universidad del Valle de Guatemala, guías de laboratorio y experimentos desarrollados.
 
 ## Agradecimientos
 * Asesor: Msc. Miguel Zea
