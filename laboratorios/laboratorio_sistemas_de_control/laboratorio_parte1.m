@@ -12,22 +12,22 @@ m = 0.023;  % masa del dron en kg
 g = 9.81;   % gravedad en m/s^2
 
 % Parámetros del controlador PID
-Kp = 2.5;  % Ganancia proporcional
-Ki = 0.5;  % Ganancia integral
-Kd = 0.1;  % Ganancia derivativa
+Kp = 6.00;  % Ganancia proporcional
+Ki = 2.50;  % Ganancia integral
+Kd = 0.50;  % Ganancia derivativa
+integral_error = 0;
+prev_error = 0;
 
 % Altura objetivo
-h_objetivo = 1; % Altura deseada en metros
+h_objetivo = 0.5; % Altura deseada en metros
 
 % Tiempo de simulación
 t_final = 5;  % Duración en segundos
 dt = 0.01;     % Intervalo de tiempo
 
-% Variables iniciales
+% Variables de estado inicial
 h = 0;  % Altura inicial
 v = 0;  % Velocidad inicial
-integral_error = 0;
-prev_error = 0;
 
 % Vectores para guardar resultados
 time = 0:dt:t_final;
@@ -59,13 +59,15 @@ end
 
 % Graficar resultados
 figure;
-subplot(3, 1, 1);
+%subplot(3, 1, 1);
 plot(time, h_values, 'LineWidth', 2);
+yline(h_objetivo, '--', 'LineWidth', 1.5, 'Color', [0.5, 0, 0]); % Línea punteada en 0.5
 xlabel('Tiempo (s)');
 ylabel('Altura (m)');
 title('Simulación de la altura del dron (modelo simplificado)');
 grid on;
 
+%%
 subplot(3, 1, 2);
 plot(time, error_values, 'LineWidth', 2);
 xlabel('Tiempo (s)');

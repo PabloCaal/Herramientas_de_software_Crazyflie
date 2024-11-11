@@ -35,9 +35,9 @@ data_timer = timer('ExecutionMode', 'fixedRate', ...
 
 %% Parte 4: Establecer valores para las ganancias del controlador
 % Valores a establecer en las ganacias del controlador PID del eje Z
-Kp = 2.00; % Ganancia propocional
-Ki = 5.00; % Ganancia integrativa
-Kd = 0.00; % Ganancia derivativa
+Kp = 2.50; % Ganancia propocional
+Ki = 1.00; % Ganancia integrativa
+Kd = 0.001; % Ganancia derivativa
 
 %% Parte 5: Secuencia del experimento
 % RECORDATORIO: Previo a ejecutar esta sección debe conectar el dispositivo 
@@ -59,7 +59,8 @@ crazyflie_set_pid_z(crazyflie_1, Kp, Ki, Kd);
 start(data_timer);
 
 % Despegue a altura predeterminada
-crazyflie_takeoff(crazyflie_1); 
+altura_objetivo = 0.5; % en metros
+crazyflie_takeoff(crazyflie_1, altura_objetivo); 
 % Tiempo de vuelo luego del despegue
 pause(8); % Colocar un tiempo considerable para que se estabilice 
 % Aterrizaje
@@ -73,14 +74,26 @@ stop(data_timer); % Detener el timer inmediatamente
 crazyflie_disconnect(crazyflie_1);
 robotat_disconnect(robotat);
 
+delete(data_timer);
+
 %% Parte 6: Graficar los datos obtenidos
 % Graficar resultados
 figure;
-subplot(2, 1, 1);
-plot(time_data, pos_data(:,3), 'LineWidth', 2);
+%subplot(2, 1, 1);
+plot(time_data, pos_data(:, 3), 'LineWidth', 2);
+hold on
+yline(altura_objetivo, '--', 'Altura objetivo', 'LineWidth', 1.5, 'Color', [0.5, 0, 0]); % Línea punteada en 0.5
+hold off
 xlabel('Tiempo (s)');
 ylabel('Altura (m)');
 title('Experimentación de controlador PID de altura');
 grid on;
 
-delete(data_timer);
+%%
+error_data = altura_objetivo - pos_data(:, 3);
+subplot(2, 1, 2);
+plot(time_data, error_data, 'LineWidth', 2);
+xlabel('Tiempo (s)');
+ylabel('Error (m)');
+title('Error de Altura');
+grid on;
